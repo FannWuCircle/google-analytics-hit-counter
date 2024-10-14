@@ -10,7 +10,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE: fannwucircle/google-analytics-hit-counter
+  IMAGE: fannwucircle/test1
 
 jobs:
   build-and-push:
