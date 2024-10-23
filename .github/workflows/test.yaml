@@ -1,8 +1,10 @@
 name: release-tag
 
 on:
-  push:
-    branches: [master]
+  pull_request:
+    branches: 
+      - master
+    types: [closed]
 
 jobs:
   release_info:
@@ -16,4 +18,4 @@ jobs:
           echo "release tag: ${{ github.event.release.tag_name }}"
           echo "pullrequestmerge:  ${{ github.event.pull_request.merged }}"
           echo "pr title:  ${{ github.event.pull_request.title }}"
-          echo "pr label:  ${{ github.event.pull_request.labels.*.name }}"
+          echo "pr label:  ${{ gtoJson(ithub.event.pull_request.labels.*.name) }}"
