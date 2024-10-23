@@ -18,4 +18,4 @@ jobs:
           echo "release tag: ${{ github.event.release.tag_name }}"
           echo "pullrequestmerge:  ${{ github.event.pull_request.merged }}"
           echo "pr title:  ${{ github.event.pull_request.title }}"
-          echo "pr label:  ${{ toJson(ithub.event.pull_request.labels.*.name) }}"
+          echo "pr label:  ${{ toJson(github.event.pull_request.labels.*.name) }}"
