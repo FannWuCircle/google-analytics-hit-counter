@@ -14,7 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: google-github-actions/release-please-action@v3
-        if: ${{ github.event.pull_request.merged == true && (contains(github.event.pull_request.labels.*.name, "security review") || "contains(github.event.pull_request.labels.*.name, 'autorelease: pending')") }}
+        if: |
+          ${{ github.event.pull_request.merged == true && (contains(github.event.pull_request.labels.*.name, "security review") || contains(github.event.pull_request.labels.*.name, 'autorelease: pending')) }}
         with:
           release-type: simple
           default-branch: master
