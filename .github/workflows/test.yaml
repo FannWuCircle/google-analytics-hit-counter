@@ -1,0 +1,19 @@
+name: release-tag
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  release_info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Tag Name
+        run: |          
+          echo "master_branch: ${{ github.event.repository.default_branch }}"
+          echo "git event ${{ github.event_name }}"
+          echo "git ref ${{ github.ref }}" 
+          echo "release tag ${{ github.event.release.tag_name }}"
+          echo "pullrequestmerge  ${{ github.event.pull_request.merged }}"
+          echo "pr title  ${{ github.event.pull_request.title }}"
+          echo "pr label  ${{ github.event.pull_request.labels.*.name }}"
