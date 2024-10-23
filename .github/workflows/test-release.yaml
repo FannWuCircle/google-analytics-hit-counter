@@ -1,13 +1,20 @@
 name: release-please
+#on:
+#  push:
+#    branches:
+#      - master
 on:
-  push:
+  pull_request:
     branches:
       - master
+    types: [closed]
+
 jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
       - uses: google-github-actions/release-please-action@v3
+        if: ${{ github.event.pull_request.merged == true && (contains(github.event.pull_request.labels.*.name, "security review") || contains(format('{},{}', github.event.pull_request.labels.*.name), 'autorelease: pending')) }}
         with:
           release-type: simple
           default-branch: master
