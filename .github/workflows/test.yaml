@@ -1,6 +1,7 @@
-name: release-tag
+name: release-info
 
 on:
+  push:
   pull_request:
     branches: 
       - master
