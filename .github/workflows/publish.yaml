@@ -1,0 +1,13 @@
+name: on-prem-release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: publish
+        run: |
+          echo "publish"
