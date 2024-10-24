@@ -21,7 +21,7 @@ jobs:
           echo "pr label:  ${{ toJson(github.event.pull_request.labels.*.name) }}"
 
   release-when-approve:
-    if: ${{ github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'autorelease') }}
+    if: "${{ github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'autorelease: pending') }}"
     runs-on: ubuntu-latest
     steps:
       - uses: google-github-actions/release-please-action@v3
