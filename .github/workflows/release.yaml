@@ -20,6 +20,11 @@ jobs:
           echo "pr title:  ${{ github.event.pull_request.title }}"
           echo "pr label:  ${{ toJson(github.event.pull_request.labels.*.name) }}"
 
+      - name: deploy
+        if: contains(github.event.pull_request.labels.*.name, 'autorelease')
+        run: |
+          echo "deploy"
+
   release-when-approve:
     if: |
       ${{ github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'autorelease: pending') }}
