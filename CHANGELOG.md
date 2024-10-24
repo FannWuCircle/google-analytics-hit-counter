@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/FannWuCircle/google-analytics-hit-counter/compare/v1.2.0...v1.3.0) (2024-10-24)
+
+
+### Features
+
+* test ([593e39b](https://github.com/FannWuCircle/google-analytics-hit-counter/commit/593e39bc61a090b8fecedf385bac5c85aa26445e))
+* test1 ([501c80c](https://github.com/FannWuCircle/google-analytics-hit-counter/commit/501c80cc77a4f16324c6e73420dd880cea9f9efa))
+
 ## [1.2.0](https://github.com/FannWuCircle/google-analytics-hit-counter/compare/v1.1.0...v1.2.0) (2024-10-23)
 
 
