@@ -21,7 +21,7 @@ jobs:
           echo "pr label:  ${{ toJson(github.event.pull_request.labels.*.name) }}"
 
       - name: deploy
-        if: contains(github.event.pull_request.labels.*.name, 'autorelease')
+        if: ${{ contains(github.event.pull_request.labels.*.name, 'autorelease') }}
         run: |
           echo "deploy"
 
