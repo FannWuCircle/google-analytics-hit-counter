@@ -1,7 +1,6 @@
 name: release-info
 
 on:
-  push:
   pull_request:
     branches: 
       - master
@@ -20,3 +19,11 @@ jobs:
           echo "pullrequestmerge:  ${{ github.event.pull_request.merged }}"
           echo "pr title:  ${{ github.event.pull_request.title }}"
           echo "pr label:  ${{ toJson(github.event.pull_request.labels.*.name) }}"
+
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        with:
+          release-type: simple
+          default-branch: master
