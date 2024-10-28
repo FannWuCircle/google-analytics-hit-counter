@@ -27,3 +27,4 @@ jobs:
         with:
           release-type: simple
           default-branch: master
+          token: ${{ secrets.PAT }}
